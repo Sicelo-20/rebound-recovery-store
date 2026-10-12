@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Secure checkout for Rebound Recovery" />
+  <title>Checkout | Rebound Recovery</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('rebound-recovery-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="checkout.css" /><link rel="stylesheet" href="theme.css" /><link rel="stylesheet" href="liquid-glass.css" /><link rel="stylesheet" href="homepage-enhancements.css" />
+</head>
+<body>
+  <div class="announcement"><span class="announcement-copy">FREE TRACKED DELIVERY ON ORDERS OVER R1,200 <b>•</b> SOUTH AFRICA</span><button class="theme-toggle utility-theme-toggle" type="button" data-theme-toggle aria-pressed="false"><span aria-hidden="true">◐</span><span class="theme-toggle-text">DARK</span></button></div>
+  <header class="checkout-header"><a class="brand" href="index.html"><span class="brand-mark">R</span>REBOUND<span>RECOVERY</span></a><div class="checkout-actions"><div class="secure-mark"><span>⌁</span> SECURE CHECKOUT</div></div></header>
+  <main class="checkout-page">
+    <section class="checkout-main">
+      <a class="back-to-bag" href="cart.html">← Back to bag</a>
+      <div class="checkout-intro"><p class="eyebrow">YOUR RECOVERY IS ALMOST ON ITS WAY</p><h1>Checkout <em>details.</em></h1></div>
+      <form id="checkout-form" novalidate>
+        <section class="checkout-section"><div class="section-title"><span>01</span><h2>Contact</h2></div><div class="form-grid"><label class="full">Email address<input type="email" name="email" autocomplete="email" placeholder="you@email.com" required /></label><label class="full">Mobile number <small>For delivery updates</small><input type="tel" name="phone" autocomplete="tel" placeholder="0XX XXX XXXX" required /></label></div></section>
+        <section class="checkout-section"><div class="section-title"><span>02</span><h2>Delivery</h2></div><div class="form-grid"><label>First name<input type="text" name="firstName" autocomplete="given-name" required /></label><label>Last name<input type="text" name="lastName" autocomplete="family-name" required /></label><label class="full">Address<input type="text" name="address" autocomplete="street-address" placeholder="Street address and number" required /></label><label class="full">Apartment, unit, etc. <small>Optional</small><input type="text" name="apartment" autocomplete="address-line2" /></label><label>City / town<input type="text" name="city" autocomplete="address-level2" required /></label><label>Province<select name="province" autocomplete="address-level1" required><option value="">Select province</option><option>Eastern Cape</option><option>Free State</option><option>Gauteng</option><option>KwaZulu-Natal</option><option>Limpopo</option><option>Mpumalanga</option><option>Northern Cape</option><option>North West</option><option>Western Cape</option></select></label><label>Postal code<input type="text" name="postal" autocomplete="postal-code" inputmode="numeric" required /></label><label>Country<input value="South Africa" readonly /></label></div></section>
+        <section class="checkout-section"><div class="section-title"><span>03</span><h2>Delivery method</h2></div><label class="delivery-choice selected"><input type="radio" name="delivery" value="standard" checked /><span><strong>Tracked standard delivery</strong><small>Estimated timing confirmed after dispatch</small></span><b id="delivery-cost">Calculated at next step</b></label><p class="method-note">Delivery terms and tracking availability must be confirmed with your fulfilment partner before launch.</p></section>
+        <section class="checkout-section"><div class="section-title"><span>04</span><h2>Payment</h2></div><div class="payment-options"><label class="payment-choice selected"><input type="radio" name="payment" value="card" checked /><span class="payment-icon">▣</span><span><strong>Card</strong><small>Visa, Mastercard and more</small></span></label><label class="payment-choice"><input type="radio" name="payment" value="ozow" /><span class="payment-icon">O</span><span><strong>Ozow</strong><small>Secure bank payment</small></span></label></div><div class="payment-panel" id="card-panel"><label>Name on card<input type="text" autocomplete="cc-name" placeholder="As shown on card" /></label><label>Card number<input type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" /></label><div class="form-grid"><label>Expiry date<input type="text" autocomplete="cc-exp" placeholder="MM / YY" /></label><label>Security code<input type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="CVV" /></label></div></div><div class="payment-panel hidden" id="ozow-panel"><p>You’ll be securely redirected to Ozow after placing your order.</p></div></section>
+        <label class="marketing"><input type="checkbox" name="marketing" /> <span>Send me recovery notes, product updates and occasional offers.</span></label>
+        <button type="submit" class="place-order">PLACE ORDER <span id="place-order-total">R0</span><i>→</i></button><p class="legal-note">By placing your order, you agree to the final delivery and returns policy. Payment processing is not connected in this prototype.</p><p class="form-error" id="form-error" aria-live="polite"></p>
+      </form>
+    </section>
+    <aside class="order-summary"><div class="summary-head"><p class="eyebrow">ORDER SUMMARY</p><a href="cart.html">Edit bag</a></div><div id="checkout-items" class="checkout-items"></div><div class="summary-totals"><div><span>Subtotal</span><strong id="checkout-subtotal">R0</strong></div><div><span>Delivery</span><span id="checkout-delivery">Calculated next</span></div><div class="checkout-total"><span>Total</span><strong id="checkout-total">R0</strong></div></div><div class="summary-safe"><span>⌁</span><p><strong>Checkout securely</strong>Your information is protected during checkout.</p></div></aside>
+  </main>
+  <footer class="checkout-footer"><span>© <span id="year"></span> Rebound Recovery</span><span>South Africa</span><a href="index.html#faq">Need help?</a></footer>
+  <script src="theme.js"></script><script src="products.js"></script><script src="store.js"></script><script src="checkout.js"></script>
+</body>
+</html>
