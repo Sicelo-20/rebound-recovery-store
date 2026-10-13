@@ -2,7 +2,7 @@ function renderCart(){
   const content = document.getElementById('cart-content');
   const cart = getCart().filter(item => PRODUCTS[item.id]);
   if (!cart.length) {
-    content.innerHTML = '<div class="empty-cart"><h2>Your bag is ready when you are.</h2><p>Start with one recovery tool, or choose the complete 3-stage bundle.</p><a class="button button-primary" href="index.html#shop">Shop recovery <span>→</span></a></div>';
+    content.innerHTML = '<div class="empty-cart"><h2>Your bag is ready when you are.</h2><p>Start with one recovery tool, or choose the complete 3-stage bundle.</p><a class="button button-primary" href="shop.html">Shop recovery <span>→</span></a></div>';
     return;
   }
   const total = cart.reduce((sum, item) => sum + PRODUCTS[item.id].price * item.quantity, 0);
